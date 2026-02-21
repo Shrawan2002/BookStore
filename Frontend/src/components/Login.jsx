@@ -53,7 +53,7 @@ export default function Login() {
 
           {/* buttons */}
           <div className="flex justify-around mt-4">
-            <button className="bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-300">
+            <button type="submit" className="bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-300">
               Login
             </button>
 

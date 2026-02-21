@@ -12,6 +12,7 @@ export default function Signup() {
 
     const onSubmit = (data)=>{
       console.log(data);
+      dialogRef.current?.close()
 
     }
 
@@ -25,25 +26,37 @@ export default function Signup() {
     <div className='mt-4 space-y-2'>
         <span>Name</span>
         <br/>
-        <input type='text' placeholder='enter your full name'
+        <input type='text'
+          {...register("name", { required: true })}
+         placeholder='enter your full name'
         className=' py-1 w-80 px-3 border rounded-md outline-none  shadow-sm' 
         />
+        <br/>
+        {errors.name && <span className="text-sm text-red-500" >This field is required</span>}
     </div>
     {/* email */}
     <div className='mt-4 space-y-2'>
         <span>Email</span>
         <br/>
-        <input type='email' placeholder='enter your email'
+        <input type='email'
+          {...register("email", { required: true })} 
+        placeholder='enter your email'
         className=' py-1 w-80 px-3 border rounded-md outline-none  shadow-sm' 
         />
+        <br/>
+        {errors.email && <span className="text-sm text-red-500" >This field is required</span>}
     </div>
     {/* password */}
      <div className='mt-4 space-y-2'>
         <span>Password</span>
         <br/>
-        <input type='password' placeholder='enter your password'
+        <input type='password'
+          {...register("password", { required: true })}
+         placeholder='enter your password'
         className=' py-1 w-80 px-3 border rounded-md outline-none  shadow-sm' 
         />
+        <br/>
+         {errors.password && <span className="text-sm text-red-500" >This field is required</span>}
     </div>
     {/* button */}
     <div className='flex justify-around mt-4'>
