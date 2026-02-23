@@ -1,9 +1,26 @@
-import React from 'react'
+
+import { useState } from "react"
 import list from "../../public/list.json"
 import Cards from "./Cards.jsx"
 import {Link} from "react-router-dom"
+import axios from "axios";
 
 export default function Course() {
+    const [book, setBook] = useState([]);
+    useEffect(()=>{
+        const getBook = async()=>{
+            try{
+                const resp = await axios.get("http://localhost:4001/book");
+                console.log(resp.data);
+                setBook(resp.data);
+            }catch(err){
+                console.log(err);
+            }
+        }
+
+        getBook();
+    
+    },[])
   return (
      <>
      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-900 ">

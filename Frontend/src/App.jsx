@@ -4,6 +4,7 @@ import Home from './home/Home'
 import AppLayout from './components/AppLayout'
 import Course from './components/Course'
 import Signup from './components/Signup'
+import Contact from './components/Contact'
 
 export default function App() {
 
@@ -19,6 +20,10 @@ export default function App() {
         {
           path: "/course",
           element: <Course/>
+        },
+        {
+          path: "/contact",
+          element: <Contact/>
         }
       ]
     },
