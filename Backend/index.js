@@ -2,10 +2,11 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import bookRouter from "./route/bookRouter.js";
-
+import cors from "cors";
 
 const app  = express();
 dotenv.config();
+app.use(cors());
 
 // connect to mongoDb
 

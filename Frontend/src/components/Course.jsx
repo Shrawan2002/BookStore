@@ -1,13 +1,15 @@
 
 import { useState } from "react"
-import list from "../../public/list.json"
+// import list from "../../public/list.json"
 import Cards from "./Cards.jsx"
 import {Link} from "react-router-dom"
 import axios from "axios";
+import { useEffect } from "react";
+
 
 export default function Course() {
     const [book, setBook] = useState([]);
-    useEffect(()=>{
+  useEffect(()=>{
         const getBook = async()=>{
             try{
                 const resp = await axios.get("http://localhost:4001/book");
@@ -39,7 +41,7 @@ export default function Course() {
         <div>
             <div className='mt-12 grid grid-cols-1 md:grid-cols-4 '>
                 {
-                    list.map((item)=>(
+                    book.map((item)=>(
                         <Cards item={item} key={item.id}/>
                     ))
                 }
